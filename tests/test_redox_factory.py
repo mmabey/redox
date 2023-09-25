@@ -6,11 +6,11 @@ from typing import List, Type
 import pytest
 from pydantic import ValidationError
 
-from pyredox.abstract_base import EventTypeAbstractModel
-from pyredox.claim import Submission
-from pyredox.factory import redox_object_factory
-from pyredox.generic import Claim as GenericClaim, types
-from pyredox.patientadmin import PatientUpdate
+from redox.abstract_base import EventTypeAbstractModel
+from redox.claim import Submission
+from redox.factory import redox_object_factory
+from redox.generic import Claim as GenericClaim, types
+from redox.patientadmin import PatientUpdate
 
 try:  # NoneType was introduced in 3.10
     from types import NoneType

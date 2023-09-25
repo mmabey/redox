@@ -1,9 +1,9 @@
 [tool.poetry]
-name = "pyredox"
-version = "1.0.5"
+name = "redox"
+version = "2.0.0"
 description = ""
 authors = ["Mike Mabey <pypi@mikemabey.com>"]
-homepage = "https://github.com/mmabey/pyredox"
+homepage = "https://github.com/mmabey/redox"
 license = "MIT"
 readme = "README.md"
 classifiers = [
@@ -61,5 +61,5 @@ legacy_tox_ini = """
         tomlkit
     allowlist_externals = coverage
     commands =
-        coverage run --source pyredox -m pytest -vv
+        coverage run --source redox -m pytest -vv
 """

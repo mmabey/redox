@@ -7,18 +7,17 @@ from typing import List
 
 from pydantic import Field
 
-from pyredox import device
+from redox import flowsheet
 from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _Device(GenericEventTypeAbstractModel):
-    _redox_module = device
+class _Flowsheet(GenericEventTypeAbstractModel):
+    _redox_module = flowsheet
 
 
-class New(_Device):
-    Device_: generic.Device = Field(..., alias="Device")
+class New(_Flowsheet):
     Meta_: generic.Meta = Field(..., alias="Meta")
     Observations_: List[generic.Observation] = Field(..., alias="Observations")
-    Patient_: generic.Patient = Field(None, alias="Patient")
+    Patient_: generic.Patient = Field(..., alias="Patient")
     Visit_: generic.Visit = Field(None, alias="Visit")

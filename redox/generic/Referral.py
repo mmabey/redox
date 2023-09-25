@@ -7,7 +7,7 @@ from typing import List
 
 from pydantic import Field
 
-from pyredox import referral
+from redox import referral
 from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 

@@ -3,57 +3,44 @@
 
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List
 
 from pydantic import Field
 
-from pyredox import order
+from redox import results
 from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _Order(GenericEventTypeAbstractModel):
-    _redox_module = order
+class _Results(GenericEventTypeAbstractModel):
+    _redox_module = results
 
 
-class Cancel(_Order):
-    Meta_: generic.Meta = Field(..., alias="Meta")
-    Order_: generic.Order = Field(..., alias="Order")
-    Patient_: generic.Patient = Field(..., alias="Patient")
-    Visit_: generic.Visit = Field(None, alias="Visit")
-
-
-class GroupedOrders(_Order):
+class New(_Results):
     Meta_: generic.Meta = Field(..., alias="Meta")
     Orders_: List[generic.Order] = Field(..., alias="Orders")
     Patient_: generic.Patient = Field(..., alias="Patient")
     Visit_: generic.Visit = Field(None, alias="Visit")
 
 
-class New(_Order):
+class NewUnsolicited(_Results):
     Meta_: generic.Meta = Field(..., alias="Meta")
-    Order_: generic.Order = Field(..., alias="Order")
+    Orders_: List[generic.Order] = Field(..., alias="Orders")
     Patient_: generic.Patient = Field(..., alias="Patient")
     Visit_: generic.Visit = Field(None, alias="Visit")
 
 
-class Query(_Order):
-    EndDateTime_: Union[str, None] = Field(None, alias="EndDateTime")
+class Query(_Results):
+    Completion_: generic.Completion = Field(None, alias="Completion")
+    LastUpdated_: generic.LastUpdated = Field(None, alias="LastUpdated")
+    Location_: generic.Location = Field(None, alias="Location")
     Meta_: generic.Meta = Field(..., alias="Meta")
     OrderIDs_: List[str] = Field(None, alias="OrderIDs")
     Patients_: List[generic.Patient] = Field(None, alias="Patients")
     Procedures_: List[generic.Procedure] = Field(None, alias="Procedures")
-    StartDateTime_: Union[str, None] = Field(None, alias="StartDateTime")
-    VisitNumbers_: List[str] = Field(None, alias="VisitNumbers")
+    ResultStatuses_: List[str] = Field(None, alias="ResultStatuses")
 
 
-class QueryResponse(_Order):
+class QueryResponse(_Results):
     Meta_: generic.Meta = Field(..., alias="Meta")
     Orders_: List[generic.Order] = Field(None, alias="Orders")
-
-
-class Update(_Order):
-    Meta_: generic.Meta = Field(..., alias="Meta")
-    Order_: generic.Order = Field(..., alias="Order")
-    Patient_: generic.Patient = Field(..., alias="Patient")
-    Visit_: generic.Visit = Field(None, alias="Visit")

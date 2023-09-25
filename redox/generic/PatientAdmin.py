@@ -7,7 +7,7 @@ from typing import List, Union
 
 from pydantic import Field
 
-from pyredox import patientadmin
+from redox import patientadmin
 from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 

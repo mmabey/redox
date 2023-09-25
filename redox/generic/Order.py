@@ -3,51 +3,57 @@
 
 from __future__ import annotations
 
-from typing import List
+from typing import List, Union
 
 from pydantic import Field
 
-from pyredox import notes
+from redox import order
 from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _Notes(GenericEventTypeAbstractModel):
-    _redox_module = notes
+class _Order(GenericEventTypeAbstractModel):
+    _redox_module = order
 
 
-class Delete(_Notes):
+class Cancel(_Order):
     Meta_: generic.Meta = Field(..., alias="Meta")
-    Note_: generic.Note = Field(..., alias="Note")
-    Orders_: List[generic.Order] = Field(None, alias="Orders")
+    Order_: generic.Order = Field(..., alias="Order")
     Patient_: generic.Patient = Field(..., alias="Patient")
     Visit_: generic.Visit = Field(None, alias="Visit")
 
 
-class New(_Notes):
+class GroupedOrders(_Order):
     Meta_: generic.Meta = Field(..., alias="Meta")
-    Note_: generic.Note = Field(..., alias="Note")
-    Orders_: List[generic.Order] = Field(None, alias="Orders")
+    Orders_: List[generic.Order] = Field(..., alias="Orders")
     Patient_: generic.Patient = Field(..., alias="Patient")
     Visit_: generic.Visit = Field(None, alias="Visit")
 
 
-class Query(_Notes):
-    DocumentIDs_: List[str] = Field(None, alias="DocumentIDs")
-    DocumentTypes_: List[str] = Field(None, alias="DocumentTypes")
+class New(_Order):
     Meta_: generic.Meta = Field(..., alias="Meta")
+    Order_: generic.Order = Field(..., alias="Order")
+    Patient_: generic.Patient = Field(..., alias="Patient")
+    Visit_: generic.Visit = Field(None, alias="Visit")
+
+
+class Query(_Order):
+    EndDateTime_: Union[str, None] = Field(None, alias="EndDateTime")
+    Meta_: generic.Meta = Field(..., alias="Meta")
+    OrderIDs_: List[str] = Field(None, alias="OrderIDs")
     Patients_: List[generic.Patient] = Field(None, alias="Patients")
+    Procedures_: List[generic.Procedure] = Field(None, alias="Procedures")
+    StartDateTime_: Union[str, None] = Field(None, alias="StartDateTime")
     VisitNumbers_: List[str] = Field(None, alias="VisitNumbers")
 
 
-class QueryResponse(_Notes):
+class QueryResponse(_Order):
     Meta_: generic.Meta = Field(..., alias="Meta")
-    Notes_: List[generic.Note] = Field(None, alias="Notes")
-
-
-class Replace(_Notes):
-    Meta_: generic.Meta = Field(..., alias="Meta")
-    Note_: generic.Note = Field(..., alias="Note")
     Orders_: List[generic.Order] = Field(None, alias="Orders")
+
+
+class Update(_Order):
+    Meta_: generic.Meta = Field(..., alias="Meta")
+    Order_: generic.Order = Field(..., alias="Order")
     Patient_: generic.Patient = Field(..., alias="Patient")
     Visit_: generic.Visit = Field(None, alias="Visit")

@@ -7,35 +7,31 @@ from typing import List
 
 from pydantic import Field
 
-from pyredox import vaccination
+from redox import patientsearch
 from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 
 
-class _Vaccination(GenericEventTypeAbstractModel):
-    _redox_module = vaccination
+class _PatientSearch(GenericEventTypeAbstractModel):
+    _redox_module = patientsearch
 
 
-class Administration(_Vaccination):
+class LocationQuery(_PatientSearch):
     Meta_: generic.Meta = Field(..., alias="Meta")
     Patient_: generic.Patient = Field(..., alias="Patient")
-    Vaccinations_: List[generic.Vaccination] = Field(..., alias="Vaccinations")
-    Visit_: generic.Visit = Field(None, alias="Visit")
 
 
-class New(_Vaccination):
+class LocationQueryResponse(_PatientSearch):
     Meta_: generic.Meta = Field(..., alias="Meta")
-    Patient_: generic.Patient = Field(..., alias="Patient")
-    Vaccinations_: List[generic.Vaccination] = Field(..., alias="Vaccinations")
-    Visit_: generic.Visit = Field(None, alias="Visit")
+    Patients_: List[generic.Patient] = Field(..., alias="Patients")
 
 
-class PatientQuery(_Vaccination):
+class Query(_PatientSearch):
     Meta_: generic.Meta = Field(..., alias="Meta")
     Patient_: generic.Patient = Field(None, alias="Patient")
 
 
-class PatientQueryResponse(_Vaccination):
+class Response(_PatientSearch):
     Meta_: generic.Meta = Field(..., alias="Meta")
     Patient_: generic.Patient = Field(None, alias="Patient")
     PotentialMatches_: List[generic.PotentialMatch] = Field(

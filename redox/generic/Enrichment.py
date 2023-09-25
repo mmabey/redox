@@ -7,7 +7,7 @@ from typing import List
 
 from pydantic import Field
 
-from pyredox import enrichment
+from redox import enrichment
 from ..abstract_base import GenericEventTypeAbstractModel
 from . import types as generic
 

@@ -5,8 +5,8 @@ from typing import Type
 
 import pytest
 
-from pyredox.abstract_base import GenericEventTypeAbstractModel
-from pyredox.generic import PatientAdmin
+from redox.abstract_base import GenericEventTypeAbstractModel
+from redox.generic import PatientAdmin
 
 
 round_trip_cases = (

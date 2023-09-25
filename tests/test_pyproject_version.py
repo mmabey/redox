@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from pathlib import Path
 
-from pyredox import __version__
+from redox import __version__
 from tomlkit import parse
 
 
