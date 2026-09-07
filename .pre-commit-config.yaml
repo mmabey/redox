@@ -3,11 +3,10 @@ exclude: >
     \.egg-info
   )$
 repos:
-# Local (not astral-sh/ruff-pre-commit): that repo pins its own ruff release
-# inside a managed venv, which can drift from the version uv.lock resolves
-# for this project (observed: pre-commit's ruff 0.13.3 vs. uv's 0.16.2,
-# producing different noqa/unused-suppression results for the same code).
-# Shelling out to `uv run ruff` keeps exactly one ruff version in play.
+# Local (not the upstream hook repos): shelling out to `uv run` keeps exactly one
+# ruff/ty version in play (the one uv.lock resolves), instead of the separate
+# pinned copies those repos manage in their own venvs (observed: pre-commit's
+# ruff 0.13.3 vs. uv's 0.16.2, giving different unused-suppression results).
 - repo: local
   hooks:
   - id: ruff-check
@@ -22,11 +21,20 @@ repos:
     language: system
     types_or: [python, pyi]
     require_serial: true
+  - id: ty
+    name: Type-check with ty
+    entry: uv run ty check
+    language: system
+    types_or: [python, pyi]
+    pass_filenames: false
+    require_serial: true
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v6.0.0
   hooks:
   - id: check-merge-conflict
   - id: check-symlinks
+  - id: check-toml
+  - id: check-yaml
   - id: end-of-file-fixer
   - id: mixed-line-ending
   - id: trailing-whitespace
