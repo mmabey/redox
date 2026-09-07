@@ -7,3 +7,7 @@
 .tox
 dist
 docs/_build/
+
+.venv
+uv.lock.bak
+.claude

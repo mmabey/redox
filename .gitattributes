@@ -1,1 +1,4 @@
-redox/*/**  linguist-generated=true
+redox/**        linguist-generated=true
+tests/fixtures/**  linguist-generated=true
+.ruff.toml      linguist-generated=true
+uv.lock         -diff linguist-generated=true

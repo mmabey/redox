@@ -2,9 +2,9 @@
 
 [![PyPI Info](https://img.shields.io/pypi/v/redox.svg)](https://pypi.python.org/pypi/redox)
 [![Python Version](https://img.shields.io/pypi/pyversions/redox)](https://pypi.python.org/pypi/redox)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mmabey/redox/test_and_coverage.yml?branch=main)](https://github.com/mmabey/redox/actions)
+[![CI](https://img.shields.io/github/actions/workflow/status/mmabey/redox/ci.yml?branch=main)](https://github.com/mmabey/redox/actions)
 [![Coverage Info](https://coveralls.io/repos/github/mmabey/redox/badge.svg?branch=main)](https://coveralls.io/github/mmabey/redox?branch=main)
-[![Black Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/redox)](https://pypi.python.org/pypi/redox)
 [![PyPI - License](https://img.shields.io/pypi/l/redox?color=blue)](https://pypi.python.org/pypi/redox)
 
@@ -15,28 +15,31 @@ Redox is a set of [Pydantic] models that conforms to the [Redox data model] spec
 easy to convert Redox-formatted JSON to Python objects and vice versa. Because the `redox` library inherits the
 functionality of Pydantic, it validates that the JSON data conforms to the spec automatically upon object creation.
 
-For example, if you tried to create a [`NewPatient`
-model](https://developer.redoxengine.com/data-models/PatientAdmin.html#NewPatient) with insufficient data, you would get
-an error like this:
+For example, if you tried to create a `NewPatient` model with insufficient data, you would get an error like this:
 
 ```
 >>> from redox.patientadmin.newpatient import NewPatient
 >>> NewPatient(Meta={})
 
-ValidationError: 3 validation errors for NewPatient
-Meta -> DataModel
-  field required (type=value_error.missing)
-Meta -> EventType
-  field required (type=value_error.missing)
+pydantic_core.ValidationError: 3 validation errors for NewPatient
+Meta.DataModel
+  Field required [type=missing, ...]
+Meta.EventType
+  Field required [type=missing, ...]
 Patient
-  field required (type=value_error.missing)
+  Field required [type=missing, ...]
 ```
+
+> **Upgrading from `pyredox`?** See [`CHANGELOG.rst`](CHANGELOG.rst). In short: the package is
+> now `redox`, it needs Pydantic v2 and Python 3.11+, field names are bare again
+> (`obj.Meta.DataModel`), and `.dict()` / `.json()` still work but warn — prefer
+> `model_dump()` / `model_dump_json()`.
 
 [Redox]: https://www.redoxengine.com/
 
-[Redox data model]: https://developer.redoxengine.com/data-models/index.html
+[Redox data model]: https://docs.redoxengine.com/api-reference/redox-data-model-api/
 
-[Pydantic]: https://pydantic-docs.helpmanual.io/
+[Pydantic]: https://docs.pydantic.dev/
 
 ## Usage
 
@@ -97,18 +100,35 @@ redox_object1 = redox_object_factory(payload_str)  # str input
 redox_object2 = redox_object_factory(data)  # dict input
 ```
 
-To create a JSON payload to send to Redox from an existing `redox` object, just call the `json()` method of the
-object:
+To create a JSON payload to send to Redox from an existing `redox` object, call `model_dump_json()`:
 
 ```python
-new_patient.json()
+new_patient.model_dump_json()
 ```
 
 When working with the individual fields of a model object, you can traverse the element properties like so:
 
 ```python
-new_patient.patient.identifiers[0].id  # "e167267c-16c9-4fe3-96ae-9cff5703e90a"
+new_patient.Patient.Identifiers[0].ID  # "e167267c-16c9-4fe3-96ae-9cff5703e90a"
 ```
+
+### Tolerating unknown fields
+
+By default a payload containing a field the installed schema version doesn't define is rejected. If you're ingesting
+data and want to be forgiving of a newer Redox schema, opt into lenient parsing:
+
+```python
+from redox import lenient_ingest
+from redox.factory import redox_object_factory
+
+with lenient_ingest():
+    obj = NewPatient(**payload_with_extra_fields)
+
+# or, equivalently:
+obj = redox_object_factory(payload_with_extra_fields, lenient=True)
+```
+
+Unknown keys are dropped (recursively). Serialization and outbound validation are unaffected.
 
 ### Using Generics
 
@@ -233,30 +253,26 @@ new_provider_msg = NewProvider(
 ).to_redox()  # This converts the object to a "proper Redox" model
 ```
 
-It's important to note here that both the `.dict()` and `.json()` methods of the generic Event Type classes
-automatically convert the data to the "proper Redox" form first, so that last statement could also be written like this:
+The `redox_dict()` and `redox_json()` methods of the generic Event Type classes automatically convert the data to the
+"proper Redox" form first, so that last statement could also be written like this:
 
 ```python
 new_provider_json = NewProvider(
     Meta=redox_types.Meta(DataModel="Provider", EventType="New", Test=True),
     Providers=[provider],
-).json()  # This converts the object to a "proper Redox" model, then gets the JSON string
+).redox_json()  # Converts to a "proper Redox" model, then serializes to JSON
 ```
+
+(`.dict()` and `.json()` also work — they behave the same but emit a `DeprecationWarning`.)
 
 There is a chance that, by using the generic types to build up the Redox message in a composable way, you may introduce
 fields that are available in the generic version of the object that are not defined in the "proper Redox" model. The
 library's default behavior is to silently drop those fields with no current plans to make this configurable.
 
 There's also a possibility that the "proper Redox" object you're building specifies a data type for a field that differs
-from other models that use that data type, which is a result of how the schema is specified. For example, the
-[generic `Demographics` class has the following field definition]([https://github.com/mmabey/redox/blob/341407063f27d3b82000bcb86362ec00ce48dec2/redox/generic/types.py#L644]):
-
-```python
-EmailAddresses: Union[List["EmailAddress"], List[str]]
-```
-
-Some Event Type models specify a list of strings and others require an `EmailAddress` object. Currently, the only way to
-detect when such a type mismatch occurs is to catch the `pydantic.ValidationError` exception, like this:
+from other models that use that data type, which is a result of how the schema is specified. Some Event Type models
+specify a list of strings for a field and others require an object. The only way to detect such a mismatch is to catch
+the `pydantic.ValidationError` raised by `to_redox()` / `redox_dict()` / `redox_json()`:
 
 ```python
 from pydantic import ValidationError
@@ -265,10 +281,9 @@ try:
     new_provider_json = NewProvider(
         Meta=redox_types.Meta(DataModel="Provider", EventType="New", Test=True),
         Providers=[provider],
-    ).json()  # This converts the object to a "proper Redox" model
+    ).redox_json()
 except ValidationError:
-    # TODO: Handle the validation error here
-    pass
+    ...  # handle the mismatch
 ```
 
 ### Serialize to JSON or `dict`
@@ -277,9 +292,8 @@ All `redox` objects have methods that allow for easy serialization:
 - For the `dict` version of an object, call the `model_dump()` method.
 - For the JSON `str` version of an object, call the `model_dump_json()` method.
 
-To customize how `redox` exports the data from your model, you can use any of the [parameters available from the
-underlying Pydantic models](https://pydantic-docs.helpmanual.io/usage/exporting_models/). Note that when calling the
-`json()` method, you can also include keyword arguments to be passed to the `json.dumps()`.
+By default these emit Redox-shaped output (field aliases, `None` values omitted). To customize, pass any of the
+[keyword arguments the underlying Pydantic methods accept](https://docs.pydantic.dev/latest/concepts/serialization/).
 
 When serializing generic types, be aware that `redox` will convert the object to the corresponding "proper Redox"
 before returning the serialized data. See above for more information.

@@ -3,27 +3,30 @@ exclude: >
     \.egg-info
   )$
 repos:
+# Local (not astral-sh/ruff-pre-commit): that repo pins its own ruff release
+# inside a managed venv, which can drift from the version uv.lock resolves
+# for this project (observed: pre-commit's ruff 0.13.3 vs. uv's 0.16.2,
+# producing different noqa/unused-suppression results for the same code).
+# Shelling out to `uv run ruff` keeps exactly one ruff version in play.
+- repo: local
+  hooks:
+  - id: ruff-check
+    name: Lint with ruff
+    entry: uv run ruff check --force-exclude --fix
+    language: system
+    types_or: [python, pyi]
+    require_serial: true
+  - id: ruff-format
+    name: Format with ruff
+    entry: uv run ruff format --force-exclude
+    language: system
+    types_or: [python, pyi]
+    require_serial: true
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.4.0
+  rev: v6.0.0
   hooks:
   - id: check-merge-conflict
   - id: check-symlinks
   - id: end-of-file-fixer
-  - id: fix-encoding-pragma
   - id: mixed-line-ending
   - id: trailing-whitespace
-- repo: https://github.com/python-poetry/poetry
-  rev: '1.6.1'  # Does not auto-update; must be manually changed
-  hooks:
-  - id: poetry-check
-  - id: poetry-lock
-    args: ["--no-update"]
-- repo: https://github.com/omnilib/ufmt
-  rev: v2.2.0
-  hooks:
-  - id: ufmt
-- repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.0.285
-  hooks:
-    - id: ruff
-      args: ["--fix", "--ignore=E501,D105,F401"]
