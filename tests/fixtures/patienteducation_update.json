@@ -1,189 +1,183 @@
 {
+  "Education": [
+    {
+      "ActionStatus": "Assign",
+      "Assignments": [
+        {
+          "ActionStatus": "Assign",
+          "Assignees": [
+            {
+              "ContentType": "Video",
+              "Learner": "Patient",
+              "Notes": [],
+              "Readiness": "Eager"
+            }
+          ],
+          "Code": "DN-PREG-01A",
+          "Codeset": "HCOPATED",
+          "CreatedDateTime": "2023-02-27T22:09:03.557Z",
+          "Description": "Diet and Nutrition in Pregnancy - Prenatal Vitamins",
+          "InstanceID": "87300586",
+          "Status": "Active",
+          "Topic": {
+            "Code": "DN-PREG-01",
+            "Codeset": "HCOPATED",
+            "Description": "Diet and Nutrition in Pregnancy"
+          }
+        }
+      ],
+      "CreatedDateTime": "2023-02-27T22:09:04.658Z",
+      "InstanceID": "20898465",
+      "Status": "Active",
+      "Subject": {
+        "Code": "DN-01",
+        "Description": "Diet and Nutrition"
+      }
+    }
+  ],
   "Meta": {
     "DataModel": "PatientEducation",
-    "EventType": "Update",
-    "EventDateTime": "2023-02-27T22:09:03.585Z",
-    "Test": true,
-    "Source": {
-      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-      "Name": "Redox Dev Tools"
-    },
     "Destinations": [
       {
         "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
         "Name": "Redox EMR"
       }
     ],
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
+    "EventType": "Update",
     "Logs": [
       {
-        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54",
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3"
       }
     ],
-    "Message": {
-      "ID": 5565
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
     },
-    "Transmission": {
-      "ID": 12414
-    }
+    "Test": true
   },
   "Patient": {
+    "Demographics": {
+      "Address": {
+        "City": "Chaing Mai",
+        "Country": "Thailand",
+        "County": "Amphoe Mueang Chiang Mai",
+        "State": "Chang Wat Chang Mai",
+        "StreetAddress": "Suan Dok Soi 6/3",
+        "ZIP": "50200"
+      },
+      "Citizenship": [
+        "US",
+        "TH",
+        "CR"
+      ],
+      "DOB": "1978-01-25",
+      "EmailAddresses": [
+        "[email\u00a0protected]"
+      ],
+      "FirstName": "Ase",
+      "IsDeceased": false,
+      "IsHispanic": false,
+      "Language": "en",
+      "LastName": "Nzesi",
+      "MaritalStatus": "Married",
+      "PhoneNumber": {
+        "Home": "+18088675310"
+      },
+      "Race": "Black",
+      "SSN": "111-22-3333",
+      "Sex": "Female"
+    },
     "Identifiers": [
       {
         "ID": "994002",
         "IDType": "MRN"
       }
     ],
-    "Demographics": {
-      "FirstName": "Ase",
-      "LastName": "Nzesi",
-      "DOB": "1978-01-25",
-      "SSN": "111-22-3333",
-      "Sex": "Female",
-      "Race": "Black",
-      "IsHispanic": false,
-      "MaritalStatus": "Married",
-      "IsDeceased": false,
-      "PhoneNumber": {
-        "Home": "+18088675310"
-      },
-      "EmailAddresses": [
-        "[email\u00a0protected]"
-      ],
-      "Language": "en",
-      "Citizenship": [
-        "US",
-        "TH",
-        "CR"
-      ],
-      "Address": {
-        "StreetAddress": "Suan Dok Soi 6/3",
-        "City": "Chaing Mai",
-        "State": "Chang Wat Chang Mai",
-        "ZIP": "50200",
-        "County": "Amphoe Mueang Chiang Mai",
-        "Country": "Thailand"
-      }
-    },
     "Notes": []
   },
   "Visit": {
-    "VisitNumber": "3498128348",
     "AccountNumber": "12945932",
-    "PatientClass": "Inpatient",
-    "VisitDateTime": "2023-02-27T22:09:03.557Z",
     "AttendingProvider": {
-      "ID": "426986",
-      "IDType": "NCT",
-      "FirstName": "Krittiya",
-      "LastName": "Somaketarin",
+      "Address": {
+        "City": "Chiang Mai",
+        "Country": "Thailand",
+        "County": "Amphoe Mueang Chiang Mai",
+        "State": "Chang Wat Chiang Mai",
+        "StreetAddress": "8 Bunrueang Rit Rd",
+        "ZIP": "50200"
+      },
       "Credentials": [
         "MD"
       ],
-      "Address": {
-        "StreetAddress": "8 Bunrueang Rit Rd",
-        "City": "Chiang Mai",
-        "State": "Chang Wat Chiang Mai",
-        "ZIP": "50200",
-        "County": "Amphoe Mueang Chiang Mai",
-        "Country": "Thailand"
-      },
       "EmailAddresses": [],
-      "PhoneNumber": {
-        "Office": "+6653920300"
-      },
+      "FirstName": "Krittiya",
+      "ID": "426986",
+      "IDType": "NCT",
+      "LastName": "Somaketarin",
       "Location": {
-        "Type": "Department",
-        "Facility": "Medical Center",
-        "FacilityIdentifiers": [],
         "Department": "Obstetrics and Gynaecology",
         "DepartmentIdentifiers": [],
-        "Room": "446"
+        "Facility": "Medical Center",
+        "FacilityIdentifiers": [],
+        "Room": "446",
+        "Type": "Department"
+      },
+      "PhoneNumber": {
+        "Office": "+6653920300"
       }
     },
     "ConsultingProvider": {
-      "Credentials": [],
       "Address": {},
+      "Credentials": [],
       "EmailAddresses": [],
-      "PhoneNumber": {},
       "Location": {
-        "FacilityIdentifiers": [],
-        "DepartmentIdentifiers": []
-      }
+        "DepartmentIdentifiers": [],
+        "FacilityIdentifiers": []
+      },
+      "PhoneNumber": {}
     },
+    "Location": {
+      "Bed": "A",
+      "Department": "MA",
+      "DepartmentIdentifiers": [],
+      "Facility": "Chiang Mai Ram Hospital",
+      "FacilityIdentifiers": [],
+      "Room": "13",
+      "Type": "Inpatient"
+    },
+    "PatientClass": "Inpatient",
     "ReferringProvider": {
-      "ID": "12981294",
-      "IDType": "NCT",
-      "FirstName": "Carol",
-      "LastName": "Fujiyoshi",
+      "Address": {
+        "City": "Lihue",
+        "Country": "United States",
+        "County": "Kauai",
+        "State": "HI",
+        "StreetAddress": "3-3420 Kuhio Hwy Suite B",
+        "ZIP": "96766"
+      },
       "Credentials": [
         "MD"
       ],
-      "Address": {
-        "StreetAddress": "3-3420 Kuhio Hwy Suite B",
-        "City": "Lihue",
-        "State": "HI",
-        "ZIP": "96766",
-        "County": "Kauai",
-        "Country": "United States"
-      },
       "EmailAddresses": [],
-      "PhoneNumber": {
-        "Office": "+18082451511"
-      },
+      "FirstName": "Carol",
+      "ID": "12981294",
+      "IDType": "NCT",
+      "LastName": "Fujiyoshi",
       "Location": {
-        "Type": "Hawaii Pacific Health Hospital",
-        "Facility": "Wilcox Medical Center",
-        "FacilityIdentifiers": [],
         "Department": "Obstetrics and Gynecology",
         "DepartmentIdentifiers": [],
-        "Room": "32"
+        "Facility": "Wilcox Medical Center",
+        "FacilityIdentifiers": [],
+        "Room": "32",
+        "Type": "Hawaii Pacific Health Hospital"
+      },
+      "PhoneNumber": {
+        "Office": "+18082451511"
       }
     },
-    "Location": {
-      "Type": "Inpatient",
-      "Facility": "Chiang Mai Ram Hospital",
-      "FacilityIdentifiers": [],
-      "Department": "MA",
-      "DepartmentIdentifiers": [],
-      "Room": "13",
-      "Bed": "A"
-    }
-  },
-  "Education": [
-    {
-      "Subject": {
-        "Code": "DN-01",
-        "Description": "Diet and Nutrition"
-      },
-      "InstanceID": "20898465",
-      "CreatedDateTime": "2023-02-27T22:09:04.658Z",
-      "Status": "Active",
-      "ActionStatus": "Assign",
-      "Assignments": [
-        {
-          "Code": "DN-PREG-01A",
-          "Codeset": "HCOPATED",
-          "Description": "Diet and Nutrition in Pregnancy - Prenatal Vitamins",
-          "Topic": {
-            "Code": "DN-PREG-01",
-            "Codeset": "HCOPATED",
-            "Description": "Diet and Nutrition in Pregnancy"
-          },
-          "InstanceID": "87300586",
-          "CreatedDateTime": "2023-02-27T22:09:03.557Z",
-          "Status": "Active",
-          "ActionStatus": "Assign",
-          "Assignees": [
-            {
-              "Learner": "Patient",
-              "ContentType": "Video",
-              "Readiness": "Eager",
-              "Notes": []
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    "VisitDateTime": "2023-02-27T22:09:03.557Z",
+    "VisitNumber": "3498128348"
+  }
 }

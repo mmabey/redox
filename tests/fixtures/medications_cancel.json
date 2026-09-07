@@ -1,33 +1,184 @@
 {
   "Meta": {
     "DataModel": "Medications",
-    "EventType": "Cancel",
-    "EventDateTime": "2023-02-27T22:09:03.585Z",
-    "Test": true,
-    "Source": {
-      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-      "Name": "Redox Dev Tools"
-    },
     "Destinations": [
       {
         "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
         "Name": "Redox EMR"
       }
     ],
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
+    "EventType": "Cancel",
     "Logs": [
       {
-        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54",
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3"
       }
     ],
-    "Message": {
-      "ID": 5565
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
     },
-    "Transmission": {
-      "ID": 12414
+    "Test": true
+  },
+  "Order": {
+    "EnteredBy": {
+      "Address": {
+        "City": "Madison",
+        "Country": "USA",
+        "County": "Dane",
+        "State": "WI",
+        "StreetAddress": "123 Main St.",
+        "ZIP": "53703"
+      },
+      "Credentials": [
+        "MD"
+      ],
+      "EmailAddresses": [],
+      "FirstName": "Pat",
+      "ID": "4356789876",
+      "IDType": "NPI",
+      "LastName": "Granite",
+      "Location": {
+        "DepartmentIdentifiers": [],
+        "FacilityIdentifiers": []
+      },
+      "PhoneNumber": {
+        "Office": "+16085551234"
+      }
+    },
+    "ID": "0a676dcf-4d3a-4e66-ac2c-f969047e8247",
+    "Indications": [],
+    "Medication": {
+      "Components": [],
+      "Dispense": {},
+      "Dose": {
+        "Quantity": 4.0,
+        "Units": "mg"
+      },
+      "Frequency": {
+        "Period": 8.0,
+        "Unit": "h"
+      },
+      "Product": {
+        "AltCodes": [],
+        "Code": "104894",
+        "CodeSystem": "2.16.840.1.113883.6.88",
+        "CodeSystemName": "RxNorm",
+        "Name": "Ondansetron 4 Mg Po Tbdp"
+      },
+      "Rate": {},
+      "Route": {
+        "AltCodes": [],
+        "Code": "C38288",
+        "CodeSystem": "2.16.840.1.113883.3.26.1.1",
+        "CodeSystemName": "NCI Thesaurus",
+        "Name": "Oral"
+      },
+      "StartDate": "2023-02-27T22:09:03.582Z"
+    },
+    "Notes": [],
+    "Pharmacy": {
+      "Address": {
+        "City": "Madison",
+        "State": "WI",
+        "StreetAddress": "123 Fake Street",
+        "ZIP": "53703"
+      },
+      "Code": "1234567",
+      "Codeset": "NCPDP",
+      "Description": "Fake Pharmacy",
+      "PhoneNumber": {}
+    },
+    "Provider": {
+      "Address": {
+        "City": "Madison",
+        "Country": "USA",
+        "County": "Dane",
+        "State": "WI",
+        "StreetAddress": "123 Main St.",
+        "ZIP": "53703"
+      },
+      "Credentials": [
+        "MD"
+      ],
+      "EmailAddresses": [],
+      "FirstName": "Pat",
+      "ID": "4356789876",
+      "IDType": "NPI",
+      "LastName": "Granite",
+      "Location": {
+        "DepartmentIdentifiers": [],
+        "FacilityIdentifiers": []
+      },
+      "NPI": "4356789876",
+      "PhoneNumber": {
+        "Office": "+16085551234"
+      }
+    },
+    "VerifiedBy": {
+      "Address": {},
+      "Credentials": [],
+      "EmailAddresses": [],
+      "Location": {
+        "DepartmentIdentifiers": [],
+        "FacilityIdentifiers": []
+      },
+      "PhoneNumber": {}
     }
   },
   "Patient": {
+    "Allergies": [
+      {
+        "AltCodes": [],
+        "Code": "7982",
+        "Criticality": {},
+        "Name": "Penicillin",
+        "Reaction": [
+          {
+            "AltCodes": [],
+            "Code": "28926001",
+            "Name": "Rash",
+            "Severity": {}
+          },
+          {
+            "AltCodes": [],
+            "Code": "247472004",
+            "Name": "Hives",
+            "Severity": {}
+          }
+        ],
+        "Severity": {},
+        "Status": {},
+        "Substance": {
+          "AltCodes": []
+        }
+      }
+    ],
+    "Demographics": {
+      "Address": {
+        "City": "Monroe",
+        "Country": "US",
+        "County": "Green",
+        "State": "WI",
+        "StreetAddress": "4762 Hickory Street",
+        "ZIP": "53566"
+      },
+      "Citizenship": [],
+      "DOB": "2008-01-06",
+      "EmailAddresses": [],
+      "FirstName": "Timothy",
+      "Language": "en",
+      "LastName": "Bixby",
+      "MaritalStatus": "Single",
+      "MiddleName": "Paul",
+      "PhoneNumber": {
+        "Home": "+18088675301"
+      },
+      "Race": "White",
+      "SSN": "101-01-0001",
+      "Sex": "Male"
+    },
     "Identifiers": [
       {
         "ID": "0000000001",
@@ -42,192 +193,35 @@
         "IDType": "NIST"
       }
     ],
-    "Demographics": {
-      "FirstName": "Timothy",
-      "MiddleName": "Paul",
-      "LastName": "Bixby",
-      "DOB": "2008-01-06",
-      "SSN": "101-01-0001",
-      "Sex": "Male",
-      "Race": "White",
-      "MaritalStatus": "Single",
-      "PhoneNumber": {
-        "Home": "+18088675301"
-      },
-      "EmailAddresses": [],
-      "Language": "en",
-      "Citizenship": [],
-      "Address": {
-        "StreetAddress": "4762 Hickory Street",
-        "City": "Monroe",
-        "State": "WI",
-        "ZIP": "53566",
-        "County": "Green",
-        "Country": "US"
-      }
-    },
-    "Notes": [],
-    "Allergies": [
-      {
-        "Code": "7982",
-        "Name": "Penicillin",
-        "AltCodes": [],
-        "Substance": {
-          "AltCodes": []
-        },
-        "Reaction": [
-          {
-            "Code": "28926001",
-            "Name": "Rash",
-            "AltCodes": [],
-            "Severity": {}
-          },
-          {
-            "Code": "247472004",
-            "Name": "Hives",
-            "AltCodes": [],
-            "Severity": {}
-          }
-        ],
-        "Severity": {},
-        "Criticality": {},
-        "Status": {}
-      }
-    ]
+    "Notes": []
   },
   "Visit": {
-    "VisitDateTime": "2023-02-27T22:09:04.437Z",
-    "VisitNumber": "1234",
-    "Location": {
-      "FacilityIdentifiers": [],
-      "DepartmentIdentifiers": []
-    },
     "AttendingProvider": {
-      "Credentials": [],
       "Address": {},
-      "EmailAddresses": [],
-      "PhoneNumber": {},
-      "Location": {
-        "FacilityIdentifiers": [],
-        "DepartmentIdentifiers": []
-      }
-    },
-    "ReferringProvider": {
       "Credentials": [],
-      "Address": {},
       "EmailAddresses": [],
-      "PhoneNumber": {},
       "Location": {
-        "FacilityIdentifiers": [],
-        "DepartmentIdentifiers": []
-      }
-    },
-    "Insurances": []
-  },
-  "Order": {
-    "ID": "0a676dcf-4d3a-4e66-ac2c-f969047e8247",
-    "Notes": [],
-    "Medication": {
-      "Dose": {
-        "Quantity": 4,
-        "Units": "mg"
-      },
-      "Rate": {},
-      "Route": {
-        "Code": "C38288",
-        "CodeSystem": "2.16.840.1.113883.3.26.1.1",
-        "CodeSystemName": "NCI Thesaurus",
-        "Name": "Oral",
-        "AltCodes": []
-      },
-      "Components": [],
-      "Product": {
-        "Code": "104894",
-        "CodeSystem": "2.16.840.1.113883.6.88",
-        "CodeSystemName": "RxNorm",
-        "Name": "Ondansetron 4 Mg Po Tbdp",
-        "AltCodes": []
-      },
-      "StartDate": "2023-02-27T22:09:03.582Z",
-      "Frequency": {
-        "Period": 8,
-        "Unit": "h"
-      },
-      "Dispense": {}
-    },
-    "Indications": [],
-    "Provider": {
-      "NPI": "4356789876",
-      "ID": "4356789876",
-      "IDType": "NPI",
-      "FirstName": "Pat",
-      "LastName": "Granite",
-      "Credentials": [
-        "MD"
-      ],
-      "Address": {
-        "StreetAddress": "123 Main St.",
-        "City": "Madison",
-        "State": "WI",
-        "ZIP": "53703",
-        "County": "Dane",
-        "Country": "USA"
-      },
-      "EmailAddresses": [],
-      "PhoneNumber": {
-        "Office": "+16085551234"
-      },
-      "Location": {
-        "FacilityIdentifiers": [],
-        "DepartmentIdentifiers": []
-      }
-    },
-    "EnteredBy": {
-      "ID": "4356789876",
-      "IDType": "NPI",
-      "FirstName": "Pat",
-      "LastName": "Granite",
-      "Credentials": [
-        "MD"
-      ],
-      "Address": {
-        "StreetAddress": "123 Main St.",
-        "City": "Madison",
-        "State": "WI",
-        "ZIP": "53703",
-        "County": "Dane",
-        "Country": "USA"
-      },
-      "EmailAddresses": [],
-      "PhoneNumber": {
-        "Office": "+16085551234"
-      },
-      "Location": {
-        "FacilityIdentifiers": [],
-        "DepartmentIdentifiers": []
-      }
-    },
-    "VerifiedBy": {
-      "Credentials": [],
-      "Address": {},
-      "EmailAddresses": [],
-      "PhoneNumber": {},
-      "Location": {
-        "FacilityIdentifiers": [],
-        "DepartmentIdentifiers": []
-      }
-    },
-    "Pharmacy": {
-      "Code": "1234567",
-      "Codeset": "NCPDP",
-      "Description": "Fake Pharmacy",
-      "Address": {
-        "StreetAddress": "123 Fake Street",
-        "City": "Madison",
-        "State": "WI",
-        "ZIP": "53703"
+        "DepartmentIdentifiers": [],
+        "FacilityIdentifiers": []
       },
       "PhoneNumber": {}
-    }
+    },
+    "Insurances": [],
+    "Location": {
+      "DepartmentIdentifiers": [],
+      "FacilityIdentifiers": []
+    },
+    "ReferringProvider": {
+      "Address": {},
+      "Credentials": [],
+      "EmailAddresses": [],
+      "Location": {
+        "DepartmentIdentifiers": [],
+        "FacilityIdentifiers": []
+      },
+      "PhoneNumber": {}
+    },
+    "VisitDateTime": "2023-02-27T22:09:04.437Z",
+    "VisitNumber": "1234"
   }
 }

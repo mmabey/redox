@@ -1,94 +1,88 @@
 {
   "Meta": {
     "DataModel": "Referral",
-    "EventType": "QueryResponse",
-    "EventDateTime": "2023-02-27T22:09:03.585Z",
-    "Test": true,
-    "Source": {
-      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-      "Name": "Redox Dev Tools"
-    },
     "Destinations": [
       {
         "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
         "Name": "Redox EMR"
       }
     ],
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
+    "EventType": "QueryResponse",
     "Logs": [
       {
-        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54",
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3"
       }
     ],
-    "Message": {
-      "ID": 5565
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
     },
-    "Transmission": {
-      "ID": 12414
-    }
+    "Test": true
   },
   "Referrals": [
     {
-      "ID": "4356789876",
       "AlternateID": "2133311",
-      "Type": "Medical",
-      "Category": "Outpatient",
-      "Priority": "Routine",
-      "Status": "Pending",
-      "DateTime": "2015-05-05T00:00:00.000Z",
-      "ExpirationDateTime": "2015-06-05T00:00:00.000Z",
-      "Reason": "Provider Ordered",
-      "Notes": [],
       "Authorization": {
-        "Plan": {
-          "ID": "31572",
-          "Name": "HMO Deductible Plan"
-        },
         "Company": {
           "ID": "60054",
           "Name": "aetna (60054 0131)"
         },
         "DateTime": "2015-05-05T00:00:00.000Z",
         "ExpirationDateTime": "2015-06-05T00:00:00.000Z",
+        "Notes": [],
         "Number": "9140860055",
-        "Notes": []
+        "Plan": {
+          "ID": "31572",
+          "Name": "HMO Deductible Plan"
+        }
       },
+      "Category": "Outpatient",
+      "DateTime": "2015-05-05T00:00:00.000Z",
       "Diagnoses": [],
+      "ExpirationDateTime": "2015-06-05T00:00:00.000Z",
+      "ID": "4356789876",
+      "Notes": [],
+      "Priority": "Routine",
       "Procedures": [
         {
           "Code": "400500400",
           "Codeset": "CPT4",
           "Description": "Anticoag Therapy Referral",
-          "Notes": [],
-          "Modifiers": []
+          "Modifiers": [],
+          "Notes": []
         }
       ],
       "Providers": [
         {
-          "ID": "4236464757",
-          "IDType": "NPI",
-          "FirstName": "John",
-          "LastName": "Slate",
+          "Address": {
+            "City": "Clayton",
+            "Country": "USA",
+            "County": "Saint Louis",
+            "State": "MO",
+            "StreetAddress": "500 First St.",
+            "ZIP": "63105"
+          },
           "Credentials": [
             "DO"
           ],
-          "Address": {
-            "StreetAddress": "500 First St.",
-            "City": "Clayton",
-            "State": "MO",
-            "ZIP": "63105",
-            "County": "Saint Louis",
-            "Country": "USA"
-          },
           "EmailAddresses": [],
-          "PhoneNumber": {},
-          "Type": "Referring Provider",
+          "FirstName": "John",
+          "ID": "4236464757",
+          "IDType": "NPI",
+          "LastName": "Slate",
           "Location": {
-            "FacilityIdentifiers": [],
-            "DepartmentIdentifiers": []
-          }
+            "DepartmentIdentifiers": [],
+            "FacilityIdentifiers": []
+          },
+          "PhoneNumber": {},
+          "Type": "Referring Provider"
         }
       ],
+      "Reason": "Provider Ordered",
+      "Status": "Pending",
+      "Type": "Medical",
       "Visit": {}
     }
   ]

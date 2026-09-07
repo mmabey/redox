@@ -1,42 +1,33 @@
 {
-  "Meta": {
-    "DataModel": "PatientAdmin",
-    "EventType": "VisitQuery",
-    "EventDateTime": "2023-02-27T22:09:03.585Z",
-    "Test": true,
-    "Source": {
-      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-      "Name": "Redox Dev Tools"
-    },
-    "Destinations": [
-      {
-        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
-        "Name": "Redox EMR"
-      }
-    ],
-    "Logs": [
-      {
-        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
-      }
-    ],
-    "Message": {
-      "ID": 5565
-    },
-    "Transmission": {
-      "ID": 12414
-    }
-  },
-  "PatientClasses": [],
   "Departments": [
     "3N"
   ],
   "Facilities": [
     "RES General Hospital"
   ],
-  "VisitStatuses": [
-    "Arrived"
-  ],
+  "Meta": {
+    "DataModel": "PatientAdmin",
+    "Destinations": [
+      {
+        "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
+        "Name": "Redox EMR"
+      }
+    ],
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
+    "EventType": "VisitQuery",
+    "Logs": [
+      {
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54",
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3"
+      }
+    ],
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Test": true
+  },
+  "PatientClasses": [],
   "Patients": [
     {
       "Identifiers": [
@@ -59,5 +50,8 @@
     "1234",
     "5678"
   ],
-  "VisitStartDateTime": "2023-02-27T22:09:04.641Z"
+  "VisitStartDateTime": "2023-02-27T22:09:04.641Z",
+  "VisitStatuses": [
+    "Arrived"
+  ]
 }

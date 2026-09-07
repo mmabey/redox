@@ -1,33 +1,78 @@
 {
   "Meta": {
     "DataModel": "Vaccination",
-    "EventType": "Administration",
-    "EventDateTime": "2023-02-27T22:09:03.585Z",
-    "Test": true,
-    "Source": {
-      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-      "Name": "Redox Dev Tools"
-    },
     "Destinations": [
       {
         "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
         "Name": "Redox EMR"
       }
     ],
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
+    "EventType": "Administration",
     "Logs": [
       {
-        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54",
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3"
       }
     ],
-    "Message": {
-      "ID": 5565
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
     },
-    "Transmission": {
-      "ID": 12414
-    }
+    "Test": true
   },
   "Patient": {
+    "Consent": {},
+    "Contacts": [
+      {
+        "Address": {
+          "City": "Monroe",
+          "Country": "US",
+          "County": "Green",
+          "State": "WI",
+          "StreetAddress": "4762 Hickory Street",
+          "ZIP": "53566"
+        },
+        "EmailAddresses": [
+          "[email\u00a0protected]"
+        ],
+        "FirstName": "Barbara",
+        "LastName": "Bixby",
+        "PhoneNumber": {
+          "Home": "+18088675303",
+          "Mobile": "+19189368865",
+          "Office": "+17077543758"
+        },
+        "RelationToPatient": "Mother",
+        "Roles": [
+          "Emergency Contact"
+        ]
+      }
+    ],
+    "Demographics": {
+      "Address": {
+        "City": "Monroe",
+        "Country": "US",
+        "County": "Green",
+        "State": "WI",
+        "StreetAddress": "4762 Hickory Street",
+        "ZIP": "53566"
+      },
+      "Citizenship": [],
+      "DOB": "2008-01-06",
+      "EmailAddresses": [],
+      "FirstName": "Timothy",
+      "Language": "en",
+      "LastName": "Bixby",
+      "MaritalStatus": "Single",
+      "MiddleName": "Paul",
+      "PhoneNumber": {
+        "Home": "+18088675301"
+      },
+      "Race": "White",
+      "SSN": "101-01-0001",
+      "Sex": "Male"
+    },
     "Identifiers": [
       {
         "ID": "0000000001",
@@ -42,120 +87,69 @@
         "IDType": "NIST"
       }
     ],
-    "Demographics": {
-      "FirstName": "Timothy",
-      "MiddleName": "Paul",
-      "LastName": "Bixby",
-      "DOB": "2008-01-06",
-      "SSN": "101-01-0001",
-      "Sex": "Male",
-      "Race": "White",
-      "MaritalStatus": "Single",
-      "PhoneNumber": {
-        "Home": "+18088675301"
-      },
-      "EmailAddresses": [],
-      "Language": "en",
-      "Citizenship": [],
-      "Address": {
-        "StreetAddress": "4762 Hickory Street",
-        "City": "Monroe",
-        "State": "WI",
-        "ZIP": "53566",
-        "County": "Green",
-        "Country": "US"
-      }
-    },
-    "Notes": [],
-    "Contacts": [
-      {
-        "FirstName": "Barbara",
-        "LastName": "Bixby",
-        "Address": {
-          "StreetAddress": "4762 Hickory Street",
-          "City": "Monroe",
-          "State": "WI",
-          "ZIP": "53566",
-          "County": "Green",
-          "Country": "US"
-        },
-        "PhoneNumber": {
-          "Home": "+18088675303",
-          "Office": "+17077543758",
-          "Mobile": "+19189368865"
-        },
-        "RelationToPatient": "Mother",
-        "EmailAddresses": [
-          "[email\u00a0protected]"
-        ],
-        "Roles": [
-          "Emergency Contact"
-        ]
-      }
-    ],
-    "Consent": {}
-  },
-  "Visit": {
-    "VisitNumber": "98765"
+    "Notes": []
   },
   "Vaccinations": [
     {
+      "Action": "New",
+      "ClinicalInfo": [],
       "DateTime": "2015-08-13T21:08:57.581Z",
+      "Dose": {
+        "Quantity": "0.5"
+      },
+      "Location": {
+        "Department": "Rolling Oaks Pediatrics",
+        "DepartmentIdentifiers": [],
+        "Facility": "Rolling Oaks Outpatient Center",
+        "FacilityIdentifiers": [],
+        "Type": "Clinic"
+      },
+      "Notes": [
+        "VIS date: May 17 2007"
+      ],
+      "Order": {
+        "EHRID": "456",
+        "ID": "123",
+        "Provider": {
+          "Address": {},
+          "Credentials": [],
+          "EmailAddresses": [],
+          "Location": {
+            "DepartmentIdentifiers": [],
+            "FacilityIdentifiers": []
+          },
+          "PhoneNumber": {}
+        }
+      },
       "Product": {
         "Code": "20",
         "Codeset": "CVX",
         "LotNumber": "123456789",
         "Manufacturer": {}
       },
+      "Provider": {
+        "Address": {},
+        "Credentials": [],
+        "EmailAddresses": [],
+        "FirstName": "Pat",
+        "ID": "4356789876",
+        "IDType": "NPI",
+        "LastName": "Granite",
+        "Location": {
+          "DepartmentIdentifiers": [],
+          "FacilityIdentifiers": []
+        },
+        "PhoneNumber": {}
+      },
       "Route": {
         "Code": "Intramuscular"
       },
       "Site": {
         "Code": "Left arm"
-      },
-      "Dose": {
-        "Quantity": "0.5"
-      },
-      "Order": {
-        "ID": "123",
-        "EHRID": "456",
-        "Provider": {
-          "Credentials": [],
-          "Address": {},
-          "EmailAddresses": [],
-          "PhoneNumber": {},
-          "Location": {
-            "FacilityIdentifiers": [],
-            "DepartmentIdentifiers": []
-          }
-        }
-      },
-      "ClinicalInfo": [],
-      "Notes": [
-        "VIS date: May 17 2007"
-      ],
-      "Provider": {
-        "ID": "4356789876",
-        "IDType": "NPI",
-        "FirstName": "Pat",
-        "LastName": "Granite",
-        "Credentials": [],
-        "Address": {},
-        "EmailAddresses": [],
-        "PhoneNumber": {},
-        "Location": {
-          "FacilityIdentifiers": [],
-          "DepartmentIdentifiers": []
-        }
-      },
-      "Location": {
-        "Type": "Clinic",
-        "Facility": "Rolling Oaks Outpatient Center",
-        "FacilityIdentifiers": [],
-        "Department": "Rolling Oaks Pediatrics",
-        "DepartmentIdentifiers": []
-      },
-      "Action": "New"
+      }
     }
-  ]
+  ],
+  "Visit": {
+    "VisitNumber": "98765"
+  }
 }

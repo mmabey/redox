@@ -1,33 +1,156 @@
 {
   "Meta": {
     "DataModel": "Notes",
-    "EventType": "New",
-    "EventDateTime": "2023-02-27T22:09:03.585Z",
-    "Test": true,
-    "Source": {
-      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-      "Name": "Redox Dev Tools"
-    },
     "Destinations": [
       {
         "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
         "Name": "Redox EMR"
       }
     ],
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
+    "EventType": "New",
     "Logs": [
       {
-        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54",
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3"
       }
     ],
-    "Message": {
-      "ID": 5565
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
     },
-    "Transmission": {
-      "ID": 12414
-    }
+    "Test": true
   },
+  "Note": {
+    "Authenticator": {
+      "Address": {},
+      "Credentials": [],
+      "EmailAddresses": [],
+      "Location": {
+        "DepartmentIdentifiers": [],
+        "FacilityIdentifiers": []
+      },
+      "PhoneNumber": {}
+    },
+    "Availability": "Unavailable",
+    "Components": [],
+    "ContentType": "Base64 Encoded",
+    "DocumentID": "b169267c-10c9-4fe3-91ae-9ckf5703e90l",
+    "DocumentType": "Empty File",
+    "DocumentationDateTime": "2015-05-06T06:00:58.872Z",
+    "FileContents": "<...base 64 file contents...>",
+    "FileName": "SamplePDF-Order Specific Note",
+    "Notifications": [
+      {
+        "Address": {
+          "City": "Verona",
+          "Country": "USA",
+          "County": "Dane",
+          "State": "WI",
+          "StreetAddress": "312 Maple Dr. Suite 400",
+          "ZIP": "53593"
+        },
+        "Credentials": [
+          "MD",
+          "PhD"
+        ],
+        "EmailAddresses": [],
+        "FirstName": "Sharon",
+        "ID": "2434534567",
+        "IDType": "NPI",
+        "LastName": "Chalk",
+        "Location": {
+          "DepartmentIdentifiers": [],
+          "FacilityIdentifiers": []
+        },
+        "PhoneNumber": {
+          "Office": "+16085559999"
+        }
+      },
+      {
+        "Address": {
+          "City": "Creve Cour",
+          "Country": "USA",
+          "County": "Saint Louis",
+          "State": "MO",
+          "StreetAddress": "5235 Kennedy Ave.",
+          "ZIP": "63141"
+        },
+        "Credentials": [
+          "RN"
+        ],
+        "EmailAddresses": [],
+        "FirstName": "Jim",
+        "ID": "8263749385",
+        "IDType": "NPI",
+        "LastName": "Mica",
+        "Location": {
+          "DepartmentIdentifiers": [],
+          "FacilityIdentifiers": []
+        },
+        "PhoneNumber": {
+          "Office": "+13145557777"
+        }
+      }
+    ],
+    "Provider": {
+      "Address": {
+        "City": "Madison",
+        "Country": "USA",
+        "County": "Dane",
+        "State": "WI",
+        "StreetAddress": "123 Main St.",
+        "ZIP": "53703"
+      },
+      "Credentials": [
+        "MD"
+      ],
+      "EmailAddresses": [],
+      "FirstName": "Pat",
+      "ID": "4356789876",
+      "IDType": "NPI",
+      "LastName": "Granite",
+      "Location": {
+        "DepartmentIdentifiers": [],
+        "FacilityIdentifiers": []
+      },
+      "PhoneNumber": {
+        "Office": "+16085551234"
+      }
+    },
+    "ServiceDateTime": "2015-05-06T06:00:58.872Z"
+  },
+  "Orders": [
+    {
+      "ID": "123456",
+      "Name": "Stress Test"
+    }
+  ],
   "Patient": {
+    "Demographics": {
+      "Address": {
+        "City": "Monroe",
+        "Country": "US",
+        "County": "Green",
+        "State": "WI",
+        "StreetAddress": "4762 Hickory Street",
+        "ZIP": "53566"
+      },
+      "Citizenship": [],
+      "DOB": "2008-01-06",
+      "EmailAddresses": [],
+      "FirstName": "Timothy",
+      "Language": "en",
+      "LastName": "Bixby",
+      "MaritalStatus": "Single",
+      "MiddleName": "Paul",
+      "PhoneNumber": {
+        "Home": "+18088675301"
+      },
+      "Race": "White",
+      "SSN": "101-01-0001",
+      "Sex": "Male"
+    },
     "Identifiers": [
       {
         "ID": "0000000001",
@@ -42,144 +165,15 @@
         "IDType": "NIST"
       }
     ],
-    "Demographics": {
-      "FirstName": "Timothy",
-      "MiddleName": "Paul",
-      "LastName": "Bixby",
-      "DOB": "2008-01-06",
-      "SSN": "101-01-0001",
-      "Sex": "Male",
-      "Race": "White",
-      "MaritalStatus": "Single",
-      "PhoneNumber": {
-        "Home": "+18088675301"
-      },
-      "EmailAddresses": [],
-      "Language": "en",
-      "Citizenship": [],
-      "Address": {
-        "StreetAddress": "4762 Hickory Street",
-        "City": "Monroe",
-        "State": "WI",
-        "ZIP": "53566",
-        "County": "Green",
-        "Country": "US"
-      }
-    },
     "Notes": []
   },
   "Visit": {
-    "VisitNumber": "1234",
-    "VisitDateTime": "2015-05-06T06:00:58.872Z",
+    "AdditionalStaff": [],
     "Location": {
-      "FacilityIdentifiers": [],
-      "DepartmentIdentifiers": []
+      "DepartmentIdentifiers": [],
+      "FacilityIdentifiers": []
     },
-    "AdditionalStaff": []
-  },
-  "Note": {
-    "ContentType": "Base64 Encoded",
-    "FileContents": "<...base 64 file contents...>",
-    "FileName": "SamplePDF-Order Specific Note",
-    "DocumentType": "Empty File",
-    "DocumentID": "b169267c-10c9-4fe3-91ae-9ckf5703e90l",
-    "ServiceDateTime": "2015-05-06T06:00:58.872Z",
-    "DocumentationDateTime": "2015-05-06T06:00:58.872Z",
-    "Availability": "Unavailable",
-    "Provider": {
-      "ID": "4356789876",
-      "IDType": "NPI",
-      "FirstName": "Pat",
-      "LastName": "Granite",
-      "Credentials": [
-        "MD"
-      ],
-      "Address": {
-        "StreetAddress": "123 Main St.",
-        "City": "Madison",
-        "State": "WI",
-        "ZIP": "53703",
-        "County": "Dane",
-        "Country": "USA"
-      },
-      "EmailAddresses": [],
-      "PhoneNumber": {
-        "Office": "+16085551234"
-      },
-      "Location": {
-        "FacilityIdentifiers": [],
-        "DepartmentIdentifiers": []
-      }
-    },
-    "Authenticator": {
-      "Credentials": [],
-      "Address": {},
-      "EmailAddresses": [],
-      "PhoneNumber": {},
-      "Location": {
-        "FacilityIdentifiers": [],
-        "DepartmentIdentifiers": []
-      }
-    },
-    "Notifications": [
-      {
-        "ID": "2434534567",
-        "IDType": "NPI",
-        "FirstName": "Sharon",
-        "LastName": "Chalk",
-        "Credentials": [
-          "MD",
-          "PhD"
-        ],
-        "Address": {
-          "StreetAddress": "312 Maple Dr. Suite 400",
-          "City": "Verona",
-          "State": "WI",
-          "ZIP": "53593",
-          "County": "Dane",
-          "Country": "USA"
-        },
-        "EmailAddresses": [],
-        "PhoneNumber": {
-          "Office": "+16085559999"
-        },
-        "Location": {
-          "FacilityIdentifiers": [],
-          "DepartmentIdentifiers": []
-        }
-      },
-      {
-        "ID": "8263749385",
-        "IDType": "NPI",
-        "FirstName": "Jim",
-        "LastName": "Mica",
-        "Credentials": [
-          "RN"
-        ],
-        "Address": {
-          "StreetAddress": "5235 Kennedy Ave.",
-          "City": "Creve Cour",
-          "State": "MO",
-          "ZIP": "63141",
-          "County": "Saint Louis",
-          "Country": "USA"
-        },
-        "EmailAddresses": [],
-        "PhoneNumber": {
-          "Office": "+13145557777"
-        },
-        "Location": {
-          "FacilityIdentifiers": [],
-          "DepartmentIdentifiers": []
-        }
-      }
-    ],
-    "Components": []
-  },
-  "Orders": [
-    {
-      "ID": "123456",
-      "Name": "Stress Test"
-    }
-  ]
+    "VisitDateTime": "2015-05-06T06:00:58.872Z",
+    "VisitNumber": "1234"
+  }
 }

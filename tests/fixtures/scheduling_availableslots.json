@@ -1,27 +1,58 @@
 {
   "Meta": {
     "DataModel": "Scheduling",
-    "EventType": "AvailableSlots",
-    "EventDateTime": "2023-02-27T22:09:03.585Z",
-    "Test": true,
-    "Source": {
-      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-      "Name": "Redox Dev Tools"
-    },
     "Destinations": [
       {
         "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
         "Name": "Redox EMR"
       }
     ],
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
+    "EventType": "AvailableSlots",
     "Logs": [
       {
-        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54",
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3"
       }
-    ]
+    ],
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Test": true
   },
   "Patient": {
+    "Demographics": {
+      "Address": {
+        "City": "Monroe",
+        "Country": "US",
+        "County": "Green",
+        "State": "WI",
+        "StreetAddress": "4762 Hickory Street",
+        "ZIP": "53566"
+      },
+      "Citizenship": [],
+      "DOB": "2008-01-06",
+      "EmailAddresses": [],
+      "FirstName": "Timothy",
+      "Language": "en",
+      "LastName": "Bixby",
+      "MaritalStatus": "Single",
+      "MiddleName": "Paul",
+      "PhoneNumber": {
+        "Home": "+18088675301"
+      },
+      "Race": "White",
+      "SSN": "101-01-0001",
+      "Sex": "Male"
+    },
+    "Diagnoses": [
+      {
+        "Code": "R07.0",
+        "Codeset": "ICD-10",
+        "Name": "Pain in throat"
+      }
+    ],
     "Identifiers": [
       {
         "ID": "0000000001",
@@ -36,52 +67,34 @@
         "IDType": "NIST"
       }
     ],
-    "Demographics": {
-      "FirstName": "Timothy",
-      "MiddleName": "Paul",
-      "LastName": "Bixby",
-      "DOB": "2008-01-06",
-      "SSN": "101-01-0001",
-      "Sex": "Male",
-      "Race": "White",
-      "MaritalStatus": "Single",
-      "PhoneNumber": {
-        "Home": "+18088675301"
-      },
-      "EmailAddresses": [],
-      "Language": "en",
-      "Citizenship": [],
-      "Address": {
-        "StreetAddress": "4762 Hickory Street",
-        "City": "Monroe",
-        "State": "WI",
-        "ZIP": "53566",
-        "County": "Green",
-        "Country": "US"
-      }
-    },
-    "Notes": [],
-    "Diagnoses": [
-      {
-        "Code": "R07.0",
-        "Codeset": "ICD-10",
-        "Name": "Pain in throat"
-      }
-    ]
+    "Notes": []
   },
   "StartDateTime": "2023-02-27T22:09:04.862Z",
   "Visit": {
-    "Reasons": [
-      "Check up"
-    ],
     "AttendingProviders": [],
     "Locations": [
       {
-        "Type": "Inpatient",
-        "Facility": "RES General Hospital",
         "Department": "3N",
+        "Facility": "RES General Hospital",
+        "Room": "136",
         "SpecialtyDepartment": {},
-        "Room": "136"
+        "Type": "Inpatient"
+      }
+    ],
+    "Reasons": [
+      "Check up"
+    ],
+    "VisitPreference": [
+      {
+        "Day": [
+          "Tues",
+          "Fri"
+        ],
+        "Duration": "30",
+        "DurationUnit": "minutes",
+        "Time": [
+          "1000"
+        ]
       }
     ],
     "VisitType": [
@@ -89,19 +102,6 @@
         "Code": "210",
         "Codeset": "DNER15",
         "Description": "Office Visit"
-      }
-    ],
-    "VisitPreference": [
-      {
-        "Duration": "30",
-        "DurationUnit": "minutes",
-        "Day": [
-          "Tues",
-          "Fri"
-        ],
-        "Time": [
-          "1000"
-        ]
       }
     ]
   }
