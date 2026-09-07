@@ -8,15 +8,15 @@ regeneration - edit it there, not here.
 import contextlib
 from importlib import import_module
 from json import loads
-from typing import Union
+from typing import TypeAlias
 from warnings import warn
 
 from . import generic
 from .abstract_base import EventTypeAbstractModel, GenericEventTypeAbstractModel, lenient_ingest
 
-JSONValue = Union[None, bool, int, float, str]  # noqa: UP007
-JSONType = Union[list["JSONType"], dict[str, Union[JSONValue, "JSONType"]]]  # noqa: UP007
-JsonPayload = Union[str, JSONType]  # noqa: UP007
+JSONValue: TypeAlias = bool | int | float | str | None
+JSONType: TypeAlias = list["JSONType"] | dict[str, "JSONValue | JSONType"]
+JsonPayload: TypeAlias = str | JSONType
 
 
 def get_model_and_event(redox_dict: dict) -> tuple[str, str]:
