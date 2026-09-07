@@ -1,31 +1,25 @@
 {
   "Meta": {
     "DataModel": "PatientSearch",
-    "EventType": "LocationQueryResponse",
-    "EventDateTime": "2023-02-27T22:09:03.585Z",
-    "Test": true,
-    "Source": {
-      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-      "Name": "Redox Dev Tools"
-    },
     "Destinations": [
       {
         "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
         "Name": "Redox EMR"
       }
     ],
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
+    "EventType": "LocationQueryResponse",
     "Logs": [
       {
-        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54",
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3"
       }
     ],
-    "Message": {
-      "ID": 5565
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
     },
-    "Transmission": {
-      "ID": 12414
-    }
+    "Test": true
   },
   "Patients": [
     {
@@ -44,8 +38,27 @@
         }
       ],
       "Organization": {
-        "Name": "Test Org",
+        "Address": {
+          "City": "ATown",
+          "Country": "USA",
+          "County": "Madison",
+          "State": "AL",
+          "StreetAddress": "123 Main St.",
+          "ZIP": "86754"
+        },
         "Aliases": [],
+        "Contacts": [
+          {
+            "EmailAddresses": [
+              "[email\u00a0protected]"
+            ],
+            "Name": "Bixby, Barbara",
+            "PhoneNumber": {
+              "Home": "+18088675303",
+              "Mobile": "+19189368865"
+            }
+          }
+        ],
         "Identifiers": [
           {
             "ID": "0000000001",
@@ -56,26 +69,7 @@
             "IDType": "OID"
           }
         ],
-        "Contacts": [
-          {
-            "Name": "Bixby, Barbara",
-            "EmailAddresses": [
-              "[email\u00a0protected]"
-            ],
-            "PhoneNumber": {
-              "Home": "+18088675303",
-              "Mobile": "+19189368865"
-            }
-          }
-        ],
-        "Address": {
-          "StreetAddress": "123 Main St.",
-          "City": "ATown",
-          "State": "AL",
-          "ZIP": "86754",
-          "County": "Madison",
-          "Country": "USA"
-        }
+        "Name": "Test Org"
       }
     }
   ]

@@ -1,33 +1,208 @@
 {
   "Meta": {
     "DataModel": "Results",
-    "EventType": "NewUnsolicited",
-    "EventDateTime": "2023-02-27T22:09:03.585Z",
-    "Test": true,
-    "Source": {
-      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-      "Name": "Redox Dev Tools"
-    },
     "Destinations": [
       {
         "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
         "Name": "Redox EMR"
       }
     ],
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
+    "EventType": "NewUnsolicited",
     "Logs": [
       {
-        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54",
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3"
       }
     ],
-    "Message": {
-      "ID": 5565
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
     },
-    "Transmission": {
-      "ID": 12414
-    }
+    "Test": true
   },
+  "Orders": [
+    {
+      "ApplicationOrderID": "1234",
+      "CollectionDateTime": "2015-05-06T06:00:58.872Z",
+      "CompletionDateTime": "2015-05-06T06:00:58.872Z",
+      "Notes": [],
+      "Priority": "Stat",
+      "Procedure": {
+        "Code": "49086-2",
+        "Description": "First trimester maternal screen with nuchal translucency panel"
+      },
+      "Provider": {
+        "Address": {},
+        "Credentials": [],
+        "EmailAddresses": [],
+        "FirstName": "Pat",
+        "LastName": "Granite",
+        "Location": {
+          "DepartmentIdentifiers": [],
+          "FacilityIdentifiers": []
+        },
+        "NPI": "4356789876",
+        "PhoneNumber": {}
+      },
+      "ResponseFlag": "Associated Segments",
+      "ResultCopyProviders": [],
+      "Results": [
+        {
+          "AbnormalFlag": "Very Abnormal",
+          "Code": "TEST0001",
+          "Description": "Cystic Fibrosis",
+          "Notes": [
+            "This individual is a carrier for Cystic Fibrosis."
+          ],
+          "ObservationMethod": {},
+          "Performer": {
+            "Address": {},
+            "Credentials": [
+              "MD"
+            ],
+            "EmailAddresses": [],
+            "FirstName": "Bob",
+            "LastName": "Smith",
+            "Location": {
+              "DepartmentIdentifiers": [],
+              "FacilityIdentifiers": []
+            },
+            "PhoneNumber": {}
+          },
+          "PrimaryResultsInterpreter": {
+            "Address": {},
+            "Credentials": [],
+            "EmailAddresses": [],
+            "Location": {
+              "DepartmentIdentifiers": [],
+              "FacilityIdentifiers": []
+            },
+            "PhoneNumber": {}
+          },
+          "Producer": {
+            "Address": {
+              "City": "Madison",
+              "Country": "USA",
+              "County": "Dane",
+              "State": "WI",
+              "StreetAddress": "111 W. Fairchild",
+              "ZIP": "53703"
+            },
+            "ID": "RL001",
+            "Name": "Redox Lab WI"
+          },
+          "ReferenceRange": {},
+          "Specimen": {},
+          "Status": "Final",
+          "Value": "Positive Result",
+          "ValueType": "String"
+        },
+        {
+          "AbnormalFlag": "Normal",
+          "Code": "TEST0004",
+          "Description": "Primary Carnitine Deficiency",
+          "Notes": [],
+          "ObservationMethod": {},
+          "Performer": {
+            "Address": {},
+            "Credentials": [
+              "MD"
+            ],
+            "EmailAddresses": [],
+            "FirstName": "Bob",
+            "LastName": "Smith",
+            "Location": {
+              "DepartmentIdentifiers": [],
+              "FacilityIdentifiers": []
+            },
+            "PhoneNumber": {}
+          },
+          "PrimaryResultsInterpreter": {
+            "Address": {},
+            "Credentials": [],
+            "EmailAddresses": [],
+            "Location": {
+              "DepartmentIdentifiers": [],
+              "FacilityIdentifiers": []
+            },
+            "PhoneNumber": {}
+          },
+          "Producer": {
+            "Address": {
+              "City": "Madison",
+              "Country": "USA",
+              "County": "Dane",
+              "State": "WI",
+              "StreetAddress": "111 W. Fairchild",
+              "ZIP": "53703"
+            },
+            "ID": "RL001",
+            "Name": "Redox Lab WI"
+          },
+          "ReferenceRange": {},
+          "Specimen": {},
+          "Status": "Final",
+          "Value": "Negative Result",
+          "ValueType": "String"
+        }
+      ],
+      "ResultsStatus": "Final",
+      "Status": "Resulted",
+      "TransactionDateTime": "2015-05-06T06:00:58.872Z"
+    }
+  ],
   "Patient": {
+    "Contacts": [
+      {
+        "Address": {
+          "City": "Monroe",
+          "Country": "US",
+          "County": "Green",
+          "State": "WI",
+          "StreetAddress": "4762 Hickory Street",
+          "ZIP": "53566"
+        },
+        "EmailAddresses": [
+          "[email\u00a0protected]"
+        ],
+        "FirstName": "Barbara",
+        "LastName": "Bixby",
+        "PhoneNumber": {
+          "Home": "+18088675303",
+          "Mobile": "+19189368865",
+          "Office": "+17077543758"
+        },
+        "RelationToPatient": "Mother",
+        "Roles": [
+          "Emergency Contact"
+        ]
+      }
+    ],
+    "Demographics": {
+      "Address": {
+        "City": "Monroe",
+        "Country": "US",
+        "County": "Green",
+        "State": "WI",
+        "StreetAddress": "4762 Hickory Street",
+        "ZIP": "53566"
+      },
+      "Citizenship": [],
+      "DOB": "2008-01-06",
+      "EmailAddresses": [],
+      "FirstName": "Timothy",
+      "Language": "en",
+      "LastName": "Bixby",
+      "MaritalStatus": "Single",
+      "MiddleName": "Paul",
+      "PhoneNumber": {
+        "Home": "+18088675301"
+      },
+      "Race": "White",
+      "SSN": "101-01-0001",
+      "Sex": "Male"
+    },
     "Identifiers": [
       {
         "ID": "0000000001",
@@ -42,214 +217,33 @@
         "IDType": "NIST"
       }
     ],
-    "Demographics": {
-      "FirstName": "Timothy",
-      "MiddleName": "Paul",
-      "LastName": "Bixby",
-      "DOB": "2008-01-06",
-      "SSN": "101-01-0001",
-      "Sex": "Male",
-      "Race": "White",
-      "MaritalStatus": "Single",
-      "PhoneNumber": {
-        "Home": "+18088675301"
-      },
-      "EmailAddresses": [],
-      "Language": "en",
-      "Citizenship": [],
-      "Address": {
-        "StreetAddress": "4762 Hickory Street",
-        "City": "Monroe",
-        "State": "WI",
-        "ZIP": "53566",
-        "County": "Green",
-        "Country": "US"
-      }
-    },
-    "Notes": [],
-    "Contacts": [
-      {
-        "FirstName": "Barbara",
-        "LastName": "Bixby",
-        "Address": {
-          "StreetAddress": "4762 Hickory Street",
-          "City": "Monroe",
-          "State": "WI",
-          "ZIP": "53566",
-          "County": "Green",
-          "Country": "US"
-        },
-        "PhoneNumber": {
-          "Home": "+18088675303",
-          "Office": "+17077543758",
-          "Mobile": "+19189368865"
-        },
-        "RelationToPatient": "Mother",
-        "EmailAddresses": [
-          "[email\u00a0protected]"
-        ],
-        "Roles": [
-          "Emergency Contact"
-        ]
-      }
-    ]
+    "Notes": []
   },
-  "Orders": [
-    {
-      "ApplicationOrderID": "1234",
-      "TransactionDateTime": "2015-05-06T06:00:58.872Z",
-      "CollectionDateTime": "2015-05-06T06:00:58.872Z",
-      "CompletionDateTime": "2015-05-06T06:00:58.872Z",
-      "Notes": [],
-      "ResultsStatus": "Final",
-      "Procedure": {
-        "Code": "49086-2",
-        "Description": "First trimester maternal screen with nuchal translucency panel"
-      },
-      "Provider": {
-        "NPI": "4356789876",
-        "FirstName": "Pat",
-        "LastName": "Granite",
-        "Credentials": [],
-        "Address": {},
-        "EmailAddresses": [],
-        "PhoneNumber": {},
-        "Location": {
-          "FacilityIdentifiers": [],
-          "DepartmentIdentifiers": []
-        }
-      },
-      "ResultCopyProviders": [],
-      "Status": "Resulted",
-      "ResponseFlag": "Associated Segments",
-      "Priority": "Stat",
-      "Results": [
-        {
-          "Code": "TEST0001",
-          "Description": "Cystic Fibrosis",
-          "Specimen": {},
-          "Value": "Positive Result",
-          "ValueType": "String",
-          "Notes": [
-            "This individual is a carrier for Cystic Fibrosis."
-          ],
-          "AbnormalFlag": "Very Abnormal",
-          "Status": "Final",
-          "PrimaryResultsInterpreter": {
-            "Credentials": [],
-            "Address": {},
-            "EmailAddresses": [],
-            "PhoneNumber": {},
-            "Location": {
-              "FacilityIdentifiers": [],
-              "DepartmentIdentifiers": []
-            }
-          },
-          "Producer": {
-            "ID": "RL001",
-            "Name": "Redox Lab WI",
-            "Address": {
-              "StreetAddress": "111 W. Fairchild",
-              "City": "Madison",
-              "State": "WI",
-              "ZIP": "53703",
-              "County": "Dane",
-              "Country": "USA"
-            }
-          },
-          "Performer": {
-            "FirstName": "Bob",
-            "LastName": "Smith",
-            "Credentials": [
-              "MD"
-            ],
-            "Address": {},
-            "EmailAddresses": [],
-            "PhoneNumber": {},
-            "Location": {
-              "FacilityIdentifiers": [],
-              "DepartmentIdentifiers": []
-            }
-          },
-          "ReferenceRange": {},
-          "ObservationMethod": {}
-        },
-        {
-          "Code": "TEST0004",
-          "Description": "Primary Carnitine Deficiency",
-          "Specimen": {},
-          "Value": "Negative Result",
-          "ValueType": "String",
-          "Notes": [],
-          "AbnormalFlag": "Normal",
-          "Status": "Final",
-          "PrimaryResultsInterpreter": {
-            "Credentials": [],
-            "Address": {},
-            "EmailAddresses": [],
-            "PhoneNumber": {},
-            "Location": {
-              "FacilityIdentifiers": [],
-              "DepartmentIdentifiers": []
-            }
-          },
-          "Producer": {
-            "ID": "RL001",
-            "Name": "Redox Lab WI",
-            "Address": {
-              "StreetAddress": "111 W. Fairchild",
-              "City": "Madison",
-              "State": "WI",
-              "ZIP": "53703",
-              "County": "Dane",
-              "Country": "USA"
-            }
-          },
-          "Performer": {
-            "FirstName": "Bob",
-            "LastName": "Smith",
-            "Credentials": [
-              "MD"
-            ],
-            "Address": {},
-            "EmailAddresses": [],
-            "PhoneNumber": {},
-            "Location": {
-              "FacilityIdentifiers": [],
-              "DepartmentIdentifiers": []
-            }
-          },
-          "ReferenceRange": {},
-          "ObservationMethod": {}
-        }
-      ]
-    }
-  ],
   "Visit": {
-    "Location": {
-      "FacilityIdentifiers": [],
-      "DepartmentIdentifiers": []
-    },
+    "AdditionalStaff": [],
     "AttendingProvider": {
-      "Credentials": [],
       "Address": {},
+      "Credentials": [],
       "EmailAddresses": [],
-      "PhoneNumber": {},
       "Location": {
-        "FacilityIdentifiers": [],
-        "DepartmentIdentifiers": []
-      }
+        "DepartmentIdentifiers": [],
+        "FacilityIdentifiers": []
+      },
+      "PhoneNumber": {}
+    },
+    "Location": {
+      "DepartmentIdentifiers": [],
+      "FacilityIdentifiers": []
     },
     "ReferringProvider": {
-      "Credentials": [],
       "Address": {},
+      "Credentials": [],
       "EmailAddresses": [],
-      "PhoneNumber": {},
       "Location": {
-        "FacilityIdentifiers": [],
-        "DepartmentIdentifiers": []
-      }
-    },
-    "AdditionalStaff": []
+        "DepartmentIdentifiers": [],
+        "FacilityIdentifiers": []
+      },
+      "PhoneNumber": {}
+    }
   }
 }

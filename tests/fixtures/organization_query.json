@@ -1,39 +1,33 @@
 {
+  "Directory": "Carequality",
+  "Identifier": {
+    "ID": "1.3.6.1",
+    "IDType": "OID"
+  },
+  "LastUpdated": "2020-02-11T14:58:03.532Z",
+  "Limit": "20",
   "Meta": {
     "DataModel": "Organization",
-    "EventType": "Query",
-    "EventDateTime": "2023-02-27T22:09:03.585Z",
-    "Test": true,
-    "Source": {
-      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-      "Name": "Redox Dev Tools"
-    },
     "Destinations": [
       {
         "ID": "af394f14-b34a-464f-8d24-895f370af4c9",
         "Name": "Redox EMR"
       }
     ],
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
+    "EventType": "Query",
     "Logs": [
       {
-        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54",
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3"
       }
     ],
-    "Message": {
-      "ID": 5565
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
     },
-    "Transmission": {
-      "ID": 12414
-    }
-  },
-  "Directory": "Carequality",
-  "Identifier": {
-    "ID": "1.3.6.1",
-    "IDType": "OID"
+    "Test": true
   },
   "NameSearch": {},
-  "RadiusSearch": {},
-  "LastUpdated": "2020-02-11T14:58:03.532Z",
-  "Limit": "20"
+  "RadiusSearch": {}
 }

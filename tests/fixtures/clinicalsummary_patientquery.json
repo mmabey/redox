@@ -1,25 +1,26 @@
 {
+  "Location": {},
   "Meta": {
     "DataModel": "Clinical Summary",
-    "EventType": "PatientQuery",
-    "EventDateTime": "2023-02-27T22:09:03.585Z",
-    "Test": true,
-    "Source": {
-      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
-      "Name": "Redox Dev Tools"
-    },
     "Destinations": [
       {
         "ID": "ef9e7448-7f65-4432-aa96-059647e9b357",
         "Name": "Patient Query Endpoint"
       }
     ],
+    "EventDateTime": "2023-02-27T22:09:03.585Z",
+    "EventType": "PatientQuery",
     "Logs": [
       {
-        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3",
-        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54"
+        "AttemptID": "925d1617-2fe0-468c-a14c-f8c04b572c54",
+        "ID": "d9f5d293-7110-461e-a875-3beb089e79f3"
       }
-    ]
+    ],
+    "Source": {
+      "ID": "7ce6f387-c33c-417d-8682-81e83628cbd9",
+      "Name": "Redox Dev Tools"
+    },
+    "Test": true
   },
   "Patient": {
     "Identifiers": [
@@ -36,6 +37,5 @@
         "IDType": "NIST"
       }
     ]
-  },
-  "Location": {}
+  }
 }
